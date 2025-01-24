@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Adventure Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Player Selection Screen -->
+  <div id="player-selection">
+    <h1>Welcome to Code Adventure</h1>
+    <label for="player-name">Enter your name:</label>
+    <input type="text" id="player-name" placeholder="Your name" />
+    <p>Select your character:</p>
+    <div id="character-options">
+      <div class="character male" data-character="male"></div>
+      <div class="character female" data-character="female"></div>
+    </div>
+    <button id="start-game">Start Game</button>
+  </div>
+
+  <!-- Game Container -->
+  <div id="game-container" class="hidden">
+    <div id="platforms">
+      <div class="platform" style="left: 50px; bottom: 100px;"></div>
+      <div class="platform" style="left: 250px; bottom: 200px;"></div>
+      <div class="platform" style="left: 450px; bottom: 150px;"></div>
+    </div>
+    <div id="character"></div>
+    <div id="scripts" style="left: 300px; bottom: 220px;"></div>
+    <div id="obstacle" style="left: 400px; bottom: 50px;"></div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <p>Name: <span id="player-name-display"></span></p>
+    <p>XP: <span id="xp">0</span></p>
+    <p>Level: <span id="level">1</span></p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
