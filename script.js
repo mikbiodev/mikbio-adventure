@@ -18,25 +18,26 @@ let level = 1;
 // Character Selection
 characterOptions.forEach(option => {
   option.addEventListener('click', () => {
-    // Highlight the selected character
+    // Clear previous selection
     characterOptions.forEach(opt => opt.classList.remove('selected'));
+    // Highlight selected character
     option.classList.add('selected');
-
     // Store the selected character type
     selectedCharacter = option.dataset.character;
-
-    // Provide feedback for selection
-    console.log(`Selected character: ${selectedCharacter}`);
   });
 });
 
-// Start Game
+// Start Game Button
 startButton.addEventListener('click', () => {
   const playerNameValue = playerNameInput.value.trim();
 
   // Ensure both a name and character are selected
-  if (!playerNameValue || !selectedCharacter) {
-    alert('Please enter your name and select a character!');
+  if (!playerNameValue) {
+    alert('Please enter your name!');
+    return;
+  }
+  if (!selectedCharacter) {
+    alert('Please select a character!');
     return;
   }
 
@@ -44,12 +45,10 @@ startButton.addEventListener('click', () => {
   playerName = playerNameValue;
   playerNameDisplay.textContent = playerName;
 
-  // Hide the selection screen and show the game
+  // Hide selection screen and show game container
   document.getElementById('player-selection').classList.add('hidden');
   gameContainer.classList.remove('hidden');
   hud.classList.remove('hidden');
-
-  console.log(`Game started with player: ${playerName} as ${selectedCharacter}`);
 });
 
 // Game Logic
@@ -57,7 +56,7 @@ let isJumping = false;
 let velocity = 0;
 const gravity = 0.5;
 
-// Handle movement
+// Character Movement
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowRight') moveRight();
   if (e.key === 'ArrowLeft') moveLeft();
