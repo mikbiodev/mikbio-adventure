@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+}
+
+.hidden {
+  display: none;
+}
+
+#player-selection {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#player-name {
+  margin: 10px 0;
+  padding: 5px;
+  font-size: 16px;
+  width: 200px;
+}
+
+.character {
+  display: inline-block;
+  width: 60px;
+  height: 100px;
+  margin: 10px;
+  cursor: pointer;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.male {
+  background: linear-gradient(to bottom, #1e90ff 50%, #00008b 50%);
+  border-color: blue;
+}
+
+.female {
+  background: linear-gradient(to bottom, #ff69b4 50%, #8b0000 50%);
+  border-color: pink;
+}
+
+.character.selected {
+  border-color: gold;
+  box-shadow: 0 0 10px gold;
+}
+
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(to bottom, #87ceeb, #228b22);
+  overflow: hidden;
+}
+
+#character {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff6347;
+  border-radius: 5px;
+}
+
+.platform {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: #8b4513;
+}
+
+#scripts {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  border-radius: 50%;
+}
+
+#obstacle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #8b0000;
+}
+
+#hud {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#hud p {
+  margin: 5px 0;
+}
