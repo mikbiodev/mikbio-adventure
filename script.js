@@ -26,12 +26,13 @@ characterOptions.forEach(option => {
 
 // Start Game
 startButton.addEventListener('click', () => {
-  if (!playerNameInput.value || !selectedCharacter) {
+  const playerNameValue = playerNameInput.value.trim();
+  if (!playerNameValue || !selectedCharacter) {
     alert('Please enter your name and select a character!');
     return;
   }
 
-  playerName = playerNameInput.value;
+  playerName = playerNameValue;
   playerNameDisplay.textContent = playerName;
 
   document.getElementById('player-selection').classList.add('hidden');
